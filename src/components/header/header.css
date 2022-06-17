@@ -1,0 +1,116 @@
+header {
+    height: 100vh;
+    padding-top: 1rem;
+    overflow: hidden;
+}
+
+
+/* By default, the overflow is visible, meaning that it is not clipped and it renders outside the element's box 
+ overflow ကို hidden မထားရင် photo က element ရဲ့ ပြင်ဘက်ကိုပါ ပြနေတယ်*/
+
+.header__container{
+    text-align: center;
+    height: 100%;
+    position: relative;
+}
+
+/* ==========CTA=========== */
+
+.cta {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/*              ======= display: flex=========
+    Before the Flexbox Layout module, there were four layout modes:
+=> Block, for sections in a webpage
+=> Inline, for text
+=> Table, for two-dimensional table data
+=> Positioned, for explicit position of an element
+
+###The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using 
+   float or positioning. */
+
+
+/*          ===========gap: 1rem;===========
+    The gap property in CSS is a shorthand for row-gap and column-gap , 
+specifying the size of gutters, which is the space between rows and columns within grid, flex, 
+and multi-column layouts. */
+
+
+
+/* ========== HEADER SOCIAL =========== */
+
+.header__social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    position: absolute;
+    left: 0;
+    bottom: 3rem;
+}
+
+/* Position absolute takes the document out of the document flow. This means that it no longer takes up any space 
+like what static and relative does. When position absolute is used on an element, it is positioned absolutely 
+with reference to the closest parent that has a position relative value */
+
+.header__social::after {
+    content: '';
+    width: 1px;
+    height: 2rem;
+    background: var(--color-primary);
+}
+
+/* ========== ME =========== */
+
+.header__container .me {
+    background: linear-gradient( var(--color-primary), transparent );
+    width: 22rem;
+    height: 30rem;
+    position: absolute;
+    left: calc(50% - 11rem);
+    margin-top: 4rem;
+    border-radius: 12rem 12rem 0 0;
+    overflow: hidden;
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
+}
+
+/* ========== SCROLL DOWN =========== */
+
+.scroll__down {
+    position: absolute;
+    right: -2.3rem;
+    bottom: 5rem;
+    transform: rotate(90deg);
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+/* ===================================MEDIA QUERY (MEDIUM DEVIECES) ===================LAPTOP==================== */
+
+@media screen and (max-width: 1024px){
+    .header {
+        height: 68vh;
+    }
+}
+
+
+/* ===================================MEDIA QUERY (SMALL DEVIECES) ==================TABLET===================== */
+
+@media screen and (max-width: 600px){
+    .header {
+        height: 100vh;
+    }
+
+    .header__social, 
+    .scroll__down {
+        display: none;
+    }
+
+
+}
+
+
+
